@@ -6,7 +6,7 @@ const app = express();
 const schema = require('./Schema/schema')
 app.use('/graphql',graphqlHTTP({
   schema,
-  graphiql: process.env.NODE_ENV === 'development'
+  graphiql: true
 }))
 
 app.listen(port, console.log(`Server running on ${port}`));
