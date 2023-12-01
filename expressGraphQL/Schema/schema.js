@@ -12,13 +12,22 @@ const Project = require("../Models/Project");
 const Client = require("../Models/Client");
 
 const ProjectStatus = new GraphQLEnumType({
-    name: "ProjectStatus",
+  name: "ProjectStatus",
+  values: {
+    NEW: { value: "Not Started" },
+    PROGRESS: { value: "In Progress" },
+    COMPLETED: { value: "Completed" },
+  },
+});
+
+const ProjectStatusUpdate = new GraphQLEnumType({
+    name: "ProjectStatusUpdate",
     values: {
       NEW: { value: "Not Started" },
       PROGRESS: { value: "In Progress" },
       COMPLETED: { value: "Completed" },
     },
-  });
+});
 
 const ProjectType = new GraphQLObjectType({
   name: "Project",
@@ -129,15 +138,26 @@ const mutation = new GraphQLObjectType({
       },
     },
     deleteProject: {
-        type: ProjectType,
-        args: { id: { type: GraphQLNonNull(GraphQLID) } },
-        resolve(parent, args) {
-          return Project.findByIdAndDelete(args.id);
+      type: ProjectType,
+      args: { id: { type: GraphQLNonNull(GraphQLID) } },
+      resolve(parent, args) {
+        return Project.findByIdAndDelete(args.id);
+      },
+    },
+
+    updateProject: {
+      type: ProjectType,
+      args: {
+        id: { type: GraphQLNonNull(GraphQLID) },
+        name: { type: GraphQLString },
+        description: { type: GraphQLString },
+        status: {
+          type: ProjectStatus,
         },
       },
+    },
   },
 });
-
 
 module.exports = new GraphQLSchema({
   query: RootQuery,
