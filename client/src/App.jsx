@@ -1,18 +1,31 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
+import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
+import Header from "./components/Header";
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const client = new ApolloClient({
+    uri: "http://localhost:5000/graphql",
+    cache: new InMemoryCache(),
+  });
   return (
-    < div>
-      
-      <h1>Hello world</h1>
-
-    </div>
-  )
+    <>
+      <ApolloProvider>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            padding: "0",
+            alignItems: "center",
+            margin: "0",
+          }}
+        >
+          <Header />
+          <h1>Hello world</h1>
+        </div>
+      </ApolloProvider>
+    </>
+  );
 }
 
-export default App
+export default App;
