@@ -79,7 +79,14 @@ const mutation = new GraphQLObjectType({
                 phone: args.phone,
             });
             return client.save();
-           }
+           },
+        },
+        deleteClient :{
+             type: ClientType,
+             args:{id:{type:GraphQLNonNull(GraphQLID)}},
+             resolve(parent,args){
+                return Client.findByIdAndDelete(args.id);
+             }
         }
     }
 })
