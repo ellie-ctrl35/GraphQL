@@ -22,7 +22,7 @@ function App() {
           }}
         >
           <Header />
-          <p>Lets goooooo</p>
+          <Clients/>
         </div>
       </ApolloProvider>
     </>
