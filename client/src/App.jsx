@@ -40,14 +40,16 @@ function App() {
             padding: "0",
             alignItems: "center",
             margin: "0",
+            gap:"3rem",
+            height:"130vh"
           }}
         >
           <Header />
-          <div style={{display:"flex",flexDirection:"row",justifyContent:"space-evenly",gap:"6rem"}}>
+          <div style={{display:"flex",flexDirection:"row",justifyContent:"space-evenly",gap:"6rem",width:"99%",height:"50vh",marginTop:"14vh"}}>
           <Clients/>
           <AddClient/>
           </div>
-          <div style={{display:"flex",flexDirection:"row",justifyContent:"space-evenly",gap:"6rem",background:'dodgerblue',width:'20%',height:"20%"}}>
+          <div style={{width:'90%',height:"60vh"}}>
            <Projects/>
           </div>
         </div>

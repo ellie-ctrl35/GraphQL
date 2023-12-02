@@ -9,26 +9,23 @@ const Projects = () => {
   if (error) return <p> Something went wrong</p>;
 
   return (
-    <div>
-      {!loading && !error && (
-        <table>
-            <thead>
-                <tr>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Status</th>
-                <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                {data.projects.map(project =>(
-                    <ProjectRow key={project.id} project={project}/>
-                ))}
-            </tbody>
-        </table>
-      )}
-    </div>
-  );
+    <>
+      {
+        data.projects.length > 0 ?(
+            <div style={{margin:"1%",display:"flex",flexDirection:"row",justifyContent:"space-evenly",width:"98%",height:"99%"}}>
+                {
+                    data.projects.map((project)=>(
+                        <ProjectRow key={project.id} project={project}/>
+                    ))
+                }
+            </div>
+        ):
+        (
+            <p>No Projects</p>
+        )
+      }
+    </>
+  )
 };
 
 export default Projects;
