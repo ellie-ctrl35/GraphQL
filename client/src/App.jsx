@@ -1,8 +1,9 @@
-import { useState } from "react";
+
 import "./App.css";
 import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
 import Header from "./components/Header";
 import Clients from "./components/clients";
+import AddClient from "./AddClient";
 
 const cache = new InMemoryCache({
   typePolicies:{
@@ -41,7 +42,10 @@ function App() {
           }}
         >
           <Header />
+          <div style={{display:"flex",flexDirection:"row",justifyContent:"space-evenly",gap:"6rem"}}>
           <Clients/>
+          <AddClient/>
+          </div>
         </div>
       </ApolloProvider>
     </>
