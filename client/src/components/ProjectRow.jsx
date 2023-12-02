@@ -16,9 +16,10 @@ const ProjectRow = ({project}) => {
         }
     } );
   return (
-    <div style={{display:"flex",flexFlow:'row',justifyContent:"space-evenly",width:"10%",height:"20%",background:"purple"}}>
+    <div style={{display:"flex",flexFlow:'row',justifyContent:"space-evenly",width:"10%",height:"30%",background:"purple"}}>
         <div>
             <h1 style={{fontSize:"0.8rem"}}>{project.name}</h1>
+            <h1 style={{fontSize:"0.5rem"}}>{project.status}</h1>
             <button onClick={deleteProject}>DELETE</button>
         </div>
     </div>
