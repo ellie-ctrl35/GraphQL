@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
 import Header from "./components/Header";
+import Clients from "./components/clients";
 
 function App() {
   const client = new ApolloClient({
@@ -10,7 +11,7 @@ function App() {
   });
   return (
     <>
-      <ApolloProvider>
+      <ApolloProvider client={client}>
         <div
           style={{
             display: "flex",
@@ -21,7 +22,7 @@ function App() {
           }}
         >
           <Header />
-          <h1>Hello world</h1>
+          <p>Lets goooooo</p>
         </div>
       </ApolloProvider>
     </>
