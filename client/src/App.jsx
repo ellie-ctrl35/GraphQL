@@ -46,6 +46,9 @@ function App() {
           <Clients/>
           <AddClient/>
           </div>
+          <div>
+            
+          </div>
         </div>
       </ApolloProvider>
     </>
