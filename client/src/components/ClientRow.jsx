@@ -16,7 +16,7 @@ const ClientRow = ({client}) => {
         }
     } );
   return (
-    <tr>
+    <tr> 
        <td>{client.name}</td>
        <td>{client.email}</td>
        <td>{client.phone}</td>
