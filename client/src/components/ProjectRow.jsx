@@ -3,6 +3,8 @@ import { DELETE_PROJECT } from "../../Mutations/projectMutation"
 import { GET_PROJECTS } from "../../Queries/projectQueries";
 
 
+import { Link } from "react-router-dom";
+
 const ProjectRow = ({project}) => {
     const [deleteProject] = useMutation(DELETE_PROJECT,{
         variables:{ id : project.id},
@@ -21,7 +23,7 @@ const ProjectRow = ({project}) => {
             <h1 style={{fontSize:"0.8rem"}}>{project.name}</h1>
             <h1 style={{fontSize:"0.5rem"}}>{project.status}</h1>
             <button onClick={deleteProject}>DELETE</button>
-            <a href={`/projects/${project.id}`}>VIEW</a>
+            <Link to={`/projects/${project.id}`}>VIEW</Link>
         </div>
     </div>
   )
