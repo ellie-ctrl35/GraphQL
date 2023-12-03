@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Clients from "./components/clients";
 import AddClient from "./AddClient";
 import Projects from "./components/Projects";
+import Home from './pages/Home';
 
 const cache = new InMemoryCache({
   typePolicies:{
@@ -34,26 +35,12 @@ function App() {
     <>
       <ApolloProvider client={client}>
         <Router>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            padding: "0",
-            alignItems: "center",
-            margin: "0",
-            gap:"3rem",
-            height:"100vh"
-          }}
-        >
           <Header />
-          <div style={{display:"flex",flexDirection:"row",justifyContent:"space-evenly",gap:"6rem",width:"99%",height:"50vh",marginTop:"14vh"}}>
-          <Clients/>
-          <AddClient/>
-          </div>
-          <div style={{width:'90%',height:"60vh"}}>
-           <Projects/>
-          </div>
-        </div>
+          <Routes>
+              <Route path="/" element={<Home/>} />
+              <Route path="/addclient" element={<AddClient />} />
+              <Route path="/projects" element={<Projects />} />
+          </Routes>
         </Router>
       </ApolloProvider>
     </>
