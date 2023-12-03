@@ -19,7 +19,6 @@ const DELETE_PROJECT = gql`
     deleteProject(id: $id) {
       id
       name
-      
     }
   }
 `;
