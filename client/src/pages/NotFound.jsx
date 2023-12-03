@@ -10,8 +10,8 @@ const NotFound = () => {
         transition={{ duration: 0.5 }}
       >
         Page Not Found
-        <Link to='/'> Click here to go home</Link>
       </h1>
+      <Link to='/'> Click here to go home</Link>
     </div>
   );
 };
