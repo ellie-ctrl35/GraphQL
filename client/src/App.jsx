@@ -1,4 +1,4 @@
-
+import {BrowserRouter as Router,Route,Routes} from 'react-router-dom'
 import "./App.css";
 import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
 import Header from "./components/Header";
@@ -33,6 +33,7 @@ function App() {
   return (
     <>
       <ApolloProvider client={client}>
+        <Router>
         <div
           style={{
             display: "flex",
@@ -41,7 +42,7 @@ function App() {
             alignItems: "center",
             margin: "0",
             gap:"3rem",
-            height:"180vh"
+            height:"100vh"
           }}
         >
           <Header />
@@ -52,10 +53,8 @@ function App() {
           <div style={{width:'90%',height:"60vh"}}>
            <Projects/>
           </div>
-          <div style={{width:'50%',height:"60vh",background:'pink',marginBottom:"2%"}}>
-
-          </div>
         </div>
+        </Router>
       </ApolloProvider>
     </>
   );
