@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import Project from './pages/Project';
+import AddProject from './AddProject';
 
 const cache = new InMemoryCache({
   typePolicies:{
@@ -39,6 +40,7 @@ function App() {
               <Route path="/" element={<Home/>} />
               <Route path="*" element={<NotFound/>} />
               <Route path="/projects/:id" element={<Project/>} />
+              <Route path="/addproject" element={<AddProject/>} />
           </Routes>
         </Router>
       </ApolloProvider>
