@@ -20,6 +20,7 @@ const Project = () => {
               <ClientInfo client={data.project.client}/>
               <Link to={`/projects/${data.project.id}/edit`}>EDIT</Link>
               <Link to={`/projects/${data.project.id}/addtask`}>DELETE</Link>
+              <Link to='/addproject'>ADD PROJECT</Link>
             </div>
           )
         }
