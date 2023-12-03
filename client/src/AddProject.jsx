@@ -31,7 +31,7 @@ const AddProject = () => {
       setstatus('');
     };
   return (
-    <div>
+    <div style={{padding:"30%"}}>
       <form onSubmit={handleSubmit} style={{display:"flex",flexDirection:"column",justifyContent:"space-evenly",gap:"1.4rem"}}>
         <input type="text" placeholder="Enter name" value={name} onChange={(e)=>setName(e.target.value )}/>
         <textarea type="text" placeholder="Enter description"  value={description} onChange={(e)=>setdescription(e.target.value )}/>
