@@ -41,7 +41,7 @@ function App() {
             alignItems: "center",
             margin: "0",
             gap:"3rem",
-            height:"130vh"
+            height:"180vh"
           }}
         >
           <Header />
@@ -51,6 +51,9 @@ function App() {
           </div>
           <div style={{width:'90%',height:"60vh"}}>
            <Projects/>
+          </div>
+          <div style={{width:'50%',height:"60vh",background:'pink',marginBottom:"2%"}}>
+
           </div>
         </div>
       </ApolloProvider>
