@@ -21,7 +21,7 @@ const ProjectRow = ({project}) => {
             <h1 style={{fontSize:"0.8rem"}}>{project.name}</h1>
             <h1 style={{fontSize:"0.5rem"}}>{project.status}</h1>
             <button onClick={deleteProject}>DELETE</button>
-            <button>VIEW</button>
+            <a href={`/projects/${project.id}`}>VIEW</a>
         </div>
     </div>
   )
